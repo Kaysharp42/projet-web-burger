@@ -1,0 +1,9 @@
+.rating_stars{
+  background: URL('./images/star_blank.png') no-repeat;
+}
+.ratings_star:hover{
+  background: URL('.images/star_overs.png') no-repeat;
+}
+.ratings_star.selected{
+  background: URL('./images/star_overs') no-repeat;
+}
