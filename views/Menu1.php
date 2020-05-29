@@ -363,7 +363,7 @@ foreach($liste as $row){
 ?>
 <?php  
 
-$promid=$row['id'];
+$promid=$row->id;
 $sql="SELECT * from promotion where idproduit =$promid ";
 $db = config::getConnexion();
 $idPromo=$db->query($sql);
@@ -386,7 +386,7 @@ foreach($idPromo as $nn){
 <div class="hs-wrapper hs-wrapper1">
 
  <div class=image>
- <img src="../back-end/<?php echo $row["image"]; ?>" class="single_delicious d-flex align-items-center" width="100" height="200" alt="Text de remplacement"/>
+ <img src="../back-end/<?php echo $row->image; ?>" class="single_delicious d-flex align-items-center" width="100" height="200" alt="Text de remplacement"/>
   
  </div>
 </div>
@@ -394,23 +394,22 @@ foreach($idPromo as $nn){
 
 
 
-								<h5 >
-<a href="single.php?pid=<?= $row["id"]; ?>"> <?PHP echo $row["nom"]; ?></a>   </h5>
+<h5 ><a href="single.html">     <?PHP echo $row->nom; ?>  </a></h5>
 								<div class="simpleCart_shelfItem">
 <?php if($prix!=-1)  {?> 
- <p><span><?php echo number_format($row['prix'],2)  ?> TND</span> <i class="item_price">
- 	<?php echo number_format($row['prix']-($row['prix']*($prix/100)),2);  ?>  TND</i></p>
+ <p><span><?php echo number_format($row->prix,2)  ?> TND</span> <i class="item_price">
+ 	<?php echo number_format($row->prix-($row->prix*($prix/100)),2);  ?>  TND</i></p>
  <?php } else { ?>
- <p><i class="item_price"> <?php echo number_format($row['prix'],2)  ?> TND</i></p>
+ <p><i class="item_price"> <?php echo number_format($row->prix,2)  ?> TND</i></p>
 <?php } ?> 	
                         <?php  if(isset($_SESSION['id'])){
 		        				$disButton = "";
-		        				if( array_search($row['id'], array_column($cartItems, 'pid')) !==false ) {
+		        				if( array_search($row->id, array_column($cartItems, 'pid')) !==false ) {
 		        					$disButton = "disabled";
 		        				}
 		        			 ?>
-<button id="cartBtn_<?=$row['id'];?>"  <?php echo $disButton; ?>  role="button" class="w3ls-cart" 
-	onclick="addToCart(<?php echo $row['id']; ?>,this.id)" >Add to cart</button>
+<button id="cartBtn_<?=$row->id;?>"  <?php echo $disButton; ?>  role="button" class="w3ls-cart" 
+	onclick="addToCart(<?php echo $row->id; ?>,this.id)" >Add to cart</button>
 <?php } ?>
 <?php if(!isset($_SESSION['id'])){ ?>
 <button   role="button" class="w3ls-cart" 

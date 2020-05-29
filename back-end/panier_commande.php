@@ -83,8 +83,8 @@ hr{
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.php">
-                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                        <a class="logo123" href="index.php">
+                            <img src="images/icon/logo123.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -175,9 +175,9 @@ hr{
 
 <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
-            <div class="logo">
+            <div class="logo123">
                 <a href="#">
-                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="images/icon/logo123.png" alt="CoolAdmin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">

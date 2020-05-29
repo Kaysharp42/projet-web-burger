@@ -54,26 +54,7 @@ include"../config.php";
 </head>
 
 <body>
-<?php if(!isset($_SESSION['id'])){ ?>
-  <script>
-    $('#myModal88').modal('show');
-  </script>
-  <?php } ?>
-   <?php if(!isset($_SESSION['id'])){ ?>
-        <a href="#" data-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
 
-
-        <?php } else{
-if ($_SESSION['role']=='admin') {
-
-    ?>
-    <a href="../back-end/index.php"><span class="glyphicon glyphicon-stats" ></span></a>
-<?php } ?>
-    <a href="clientlog.php?action=out"><span class="glyphicon glyphicon-log-in" ></span></a>
-
-  <?php
-  }
-  ?>
 	
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -135,9 +116,26 @@ if ($_SESSION['role']=='admin') {
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
-                                                <i class="fa fa-google-plus"></i>
-                                            </a>
+                                        <?php if(!isset($_SESSION['id'])){ ?>
+  <script>
+    $('#myModal88').modal('show');
+  </script>
+  <?php } ?>
+   <?php if(!isset($_SESSION['id'])){ ?>
+        <a href="#" data-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+
+
+        <?php } else{
+if ($_SESSION['role']=='admin') {
+
+    ?>
+    <a href="../back-end/index.php"><span class="glyphicon glyphicon-stats" ></span></a>
+<?php } ?>
+    <a href="clientlog.php?action=out"><span class="glyphicon glyphicon-log-in" ></span></a>
+
+  <?php
+  }
+  ?>
                                         </li>
                                     </ul>
                                 </div>
@@ -240,7 +238,7 @@ echo"problem occured  orderId please try again";
 			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 			$mail->Port = 587;                                    // TCP port to connect to
 
-			$mail->setFrom(EMAIL,'HignTechInfo');
+			$mail->setFrom(EMAIL,'almazaya.carthage');
 			$mail->addAddress($_SESSION['email']);     // Add a recipient
 
 			$mail->addReplyTo(EMAIL);

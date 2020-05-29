@@ -10,10 +10,10 @@
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
-      <link rel="icon" href="images/icone.ico">
+      <link rel="icon" href="images/favicon.png">
     <!-- Title Page-->
     <title>Dashboard High-Tech-Info</title>
-    <link rel="icon" href="images/icone.ico">
+    <link rel="icon" href="images/favicon.png">
 
 
     <!-- Fontfaces CSS-->
@@ -47,8 +47,8 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.php">
-                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                        <a class="logo123" href="index.php">
+                            <img src="images/icon/logo123.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -107,9 +107,9 @@
 
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
-            <div class="logo">
+            <div class="logo123">
                 <a href="../views/index.php">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                    <img src="images/icon/logo123.png" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -368,8 +368,8 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="../logout.php">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                                <a href="../logo123ut.php">
+                                                    <i class="zmdi zmdi-power"></i>logo123ut</a>
                                             </div>
                                         </div>
                                     </div>

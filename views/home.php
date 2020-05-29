@@ -1,3 +1,8 @@
+<?php
+session_start();
+include"../config.php";	
+
+?>
 .<!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -34,26 +39,7 @@
 </head>
 
 <body>
-<?php if(!isset($_SESSION['id'])){ ?>
-  <script>
-    $('#myModal88').modal('show');
-  </script>
-  <?php } ?>
-   <?php if(!isset($_SESSION['id'])){ ?>
-        <a href="#" data-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
 
-
-        <?php } else{
-if ($_SESSION['role']=='admin') {
-
-    ?>
-    <a href="../back-end/index.php"><span class="glyphicon glyphicon-stats" ></span></a>
-<?php } ?>
-    <a href="clientlog.php?action=out"><span class="glyphicon glyphicon-log-in" ></span></a>
-
-  <?php
-  }
-  ?>
   <?php 
 require_once('../db/DbConnect.php');
             $db   = new DbConnect();
@@ -139,9 +125,27 @@ if(isset($_SESSION['id'])){
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
-                                                <i class="fa fa-google-plus"></i>
-                                            </a>
+                                        <?php if(!isset($_SESSION['id'])){ ?>
+  <script>
+    $('#myModal88').modal('show');
+  </script>
+  <?php } ?>
+
+   <?php if(!isset($_SESSION['id'])){ ?>
+        <a href="#" data-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+
+
+        <?php } else{
+if ($_SESSION['role']=='admin') {
+
+    ?>
+    <a href="../back-end/index.php"><span class="glyphicon glyphicon-stats" ></span></a>
+<?php } ?>
+    <a href="clientlog.php?action=out"><span class="glyphicon glyphicon-log-in" ></span></a>
+
+  <?php
+  }
+  ?>
                                         </li>
                                     </ul>
                                 </div>

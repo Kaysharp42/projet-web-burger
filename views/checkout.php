@@ -45,6 +45,8 @@ include"../config.php";
 <!-- font-awesome icons -->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
+<link href='//fonts.googleapis.com/css?family=Glegoo:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!-- js -->
 <script src="js/jquery.min.js"></script>
 <link rel="stylesheet" href="css/jquery.countdown.css" /> <!-- countdown --> 
@@ -61,26 +63,7 @@ include"../config.php";
 </head>
 
 <body>
-<?php if(!isset($_SESSION['id'])){ ?>
-  <script>
-    $('#myModal88').modal('show');
-  </script>
-  <?php } ?>
-   <?php if(!isset($_SESSION['id'])){ ?>
-        <a href="#" data-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
 
-
-        <?php } else{
-if ($_SESSION['role']=='admin') {
-
-    ?>
-    <a href="../back-end/index.php"><span class="glyphicon glyphicon-stats" ></span></a>
-<?php } ?>
-    <a href="clientlog.php?action=out"><span class="glyphicon glyphicon-log-in" ></span></a>
-
-  <?php
-  }
-  ?>
 	
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -171,9 +154,27 @@ if(isset($_SESSION['id'])){
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
-                                                <i class="fa fa-google-plus"></i>
-                                            </a>
+                                        <?php if(!isset($_SESSION['id'])){ ?>
+  <script>
+    $('#myModal88').modal('show');
+  </script>
+  <?php } ?>
+
+   <?php if(!isset($_SESSION['id'])){ ?>
+        <a href="#" data-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+
+
+        <?php } else{
+if ($_SESSION['role']=='admin') {
+
+    ?>
+    <a href="../back-end/index.php"><span class="glyphicon glyphicon-stats" ></span></a>
+<?php } ?>
+    <a href="clientlog.php?action=out"><span class="glyphicon glyphicon-log-in" ></span></a>
+
+  <?php
+  }
+  ?>
                                         </li>
                                     </ul>
                                 </div>
@@ -574,6 +575,10 @@ if($prix!=0){
                                     </div>
                         </div>
                     </div>
+                    
+				<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d96908.54934770924!2d-73.74913540000001!3d40.62123259999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sanimal+rescue+service+near+Inwood%2C+New+York%2C+NY%2C+United+States!5e0!3m2!1sen!2sin!4v1436335928062" frameborder="0" style="border:0" allowfullscreen></iframe>
+			
+		</div>
                     <div class="row justify-content-center">
                         <div class="col-lg-4">
                             <div class="socail_links text-center">
@@ -604,6 +609,7 @@ if($prix!=0){
                     </div>
                 </div>
             </div>
+            
             <div class="copy-right_text">
                 <div class="container">
                     <div class="footer_border"></div>
@@ -648,10 +654,26 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
+ <!-- cart-js -->
+ <script src="js/minicart.js"></script>
+	<script>
+        w3ls.render();
 
+        w3ls.cart.on('w3sb_checkout', function (evt) {
+        	var items, len, i;
+
+        	if (this.subtotal() > 0) {
+        		items = this.items();
+
+        		for (i = 0, len = items.length; i < len; i++) { 
+        		}
+        	}
+        });
+    </script>  
+	<!-- //cart-js --> 
 </body>
   
-</body>
+
 <script type="text/javascript">
     function updateCart(pId, cartId) {
         console.log($('#seat_'+cartId).val())
@@ -735,6 +757,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             }
         })
     })
-
+   
 </script>
 </html>
